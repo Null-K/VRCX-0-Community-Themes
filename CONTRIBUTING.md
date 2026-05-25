@@ -7,6 +7,8 @@ themes are community-authored content. The goal is to make theme installation
 convenient while keeping redistribution, compatibility, and review expectations
 explicit.
 
+For file preparation and manifest field details, see `docs/author-guide.md`.
+
 ## Pull Request Rules
 
 - One pull request should add or update one theme.
@@ -14,28 +16,22 @@ explicit.
   maintainers asked for a compatibility fix.
 - A new theme must include `theme.json`, `theme.css`, `README.md`, and
   `preview.webp`.
-- `preview.webp` must be compressed, WebP format, and no larger than 512 KiB.
 - The theme directory name must match `theme.json` `id`.
-- The `id` must be lowercase kebab-case, for example `glass-dark`.
+- `themes/index.json` should only add or keep the theme id string. Do not copy
+  theme metadata into the index.
 - The `version` field must use semantic versioning and start at `1.0.0` or
   higher.
 - The `author.github` field is required.
-- The optional `author.url` field may link to a personal site or profile.
 - The `testedWith` field must be the latest VRCX-0 version the author tested.
-- The `accentMode` field is boolean: `true` means users can customize accent
-  color in VRCX-0, `false` means the theme controls accent color.
 - The `license` field is optional. If omitted, the theme is accepted as
   GPL-3.0-only.
 - Only set `license` and optional `licenseUrl` when maintainers approve another
   GPLv3-compatible redistributable license.
-- `tags` may use any language, but English tags are recommended and only three
-  tags are allowed.
 - If the CSS references remote images or fonts, `remoteAssets` must be `true`.
-- Do not add wallpaper or large binary assets unless the asset license clearly
-  allows redistribution.
+- `preview.webp` must be WebP, compressed, and no larger than 512 KiB.
 - Do not minify or obfuscate CSS. CSS must be reviewable.
 
-## Required Files
+## Theme Directory
 
 ```text
 themes/<theme-id>/
@@ -47,14 +43,7 @@ themes/<theme-id>/
 
 `theme.json` is machine-readable metadata. `theme.css` is the CSS installed by
 VRCX-0. `README.md` should be a short user-facing theme introduction that can
-be shown in the app. `preview.webp` is required.
-
-`preview.webp` requirements:
-
-- File name: `preview.webp`.
-- Format: WebP.
-- Maximum file size: 512 KiB.
-- Use compression and strip unnecessary metadata.
+be shown in the app. `preview.webp` is the required catalog image.
 
 ## CSS Policy
 
@@ -78,20 +67,8 @@ Not allowed:
 
 ## Remote Assets
 
-Remote assets are allowed but must be explicit.
-
-If your CSS contains `url("https://...")` for an image or font, set:
-
-```json
-{
-  "remoteAssets": true
-}
-```
-
-Remote assets can expose user IP address and user agent to the asset host. They
-can also disappear, change, or become unavailable. Theme authors are
-responsible for using assets that they have permission to reference or
-redistribute.
+Remote images and fonts are allowed when `remoteAssets` is `true`. Authors are
+responsible for using assets they have permission to reference or redistribute.
 
 ## License Guidance
 
@@ -109,17 +86,13 @@ all-rights-reserved terms.
 If a theme's externally linked images or CSS code are believed to infringe
 someone's rights, please open an issue and I will review and handle it.
 
-## Compatibility Expectations
-
-Themes are not guaranteed to stay compatible across VRCX-0 versions. See
-`docs/compatibility.md` for the compatibility policy.
-
 ## Review Checklist
 
 Before opening a pull request:
 
 - Validate that `theme.json` is strict JSON.
 - Check that the theme directory name matches `id`.
+- Check that `themes/index.json` contains only the theme id string.
 - Check that `remoteAssets` matches the CSS.
 - Confirm any explicit `license` is an approved GPLv3-compatible
   redistributable license. If `license` is omitted, GPL-3.0-only applies.

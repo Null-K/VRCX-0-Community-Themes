@@ -39,6 +39,8 @@ Important fields:
 - `accentMode`: `true` if users can keep using VRCX-0's built-in accent color
   selector, `false` if the theme controls accent colors.
 
+After adding the directory, add only the theme id string to `themes/index.json`.
+
 ## 3. Write theme.css
 
 Theme CSS is ordinary CSS. You can use VRCX-0 surface variables, app CSS
@@ -60,12 +62,7 @@ development mode.
 Write a short introduction for the theme. VRCX-0 may show this text in the app,
 so keep it concise and user-facing.
 
-## 5. License the Theme
+## 5. Check the Rules
 
-You may omit the `license` field in `theme.json`. If omitted, the theme is
-accepted as GPL-3.0-only. A separate `LICENSE` file inside the theme directory
-is optional.
-
-Only set `license` and `licenseUrl` when maintainers approve another
-GPLv3-compatible redistributable license. For exceptions and infringement
-handling policy, see `CONTRIBUTING.md`.
+Before opening a pull request, read `CONTRIBUTING.md` for review, license,
+remote asset, and recovery requirements.

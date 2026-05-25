@@ -13,7 +13,8 @@
     "themes": {
       "type": "array",
       "items": {
-        "$ref": "./theme.schema.json"
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
       },
       "uniqueItems": true
     }

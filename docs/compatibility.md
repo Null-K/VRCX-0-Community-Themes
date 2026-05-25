@@ -1,11 +1,5 @@
 # Compatibility Policy
 
-This repository is officially maintained by the VRCX-0 project, but the themes
-listed in it are community-authored themes. Inclusion in this
-catalog does not make a theme an official VRCX-0 skin or endorsement.
-
-## Compatibility
-
 VRCX-0 may change page structure and styling as the app evolves. App
 development takes priority, and themes are not guaranteed to stay compatible
 across versions.
