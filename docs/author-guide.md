@@ -17,7 +17,7 @@ themes/my-theme/
 The directory name must match `theme.json` `id`.
 `preview.webp` is required and must use that exact file name and WebP format.
 Keep it compressed, stripped of unnecessary metadata, and no larger than
-512 KiB. The preview image must only include assets the author owns, has
+256 KiB. The preview image must only include assets the author owns, has
 permission to use, or may redistribute.
 
 ## 2. Write theme.json
@@ -31,7 +31,7 @@ Important fields:
 - `version`: semantic version starting at `1.0.0`.
 - `author.github`: required GitHub username.
 - `author.url`: optional personal site or profile link.
-- `tags`: up to three short tags.
+- `tags`: one to three short tags.
 - `testedWith`: latest VRCX-0 version you tested.
 - `remoteAssets`: `true` if CSS references remote images or fonts.
 - `accentMode`: `true` if users can keep using VRCX-0's built-in accent color
