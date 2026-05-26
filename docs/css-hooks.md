@@ -9,10 +9,12 @@ long-term stable Theme API.
 VRCX-0 applies CSS in this order:
 
 1. Built-in app CSS.
-2. Installed theme snapshot.
-3. User override CSS.
+2. Official background CSS, if enabled.
+3. Installed theme snapshot.
+4. User override CSS.
 
-User override CSS wins over installed theme CSS.
+Installed community themes and user override CSS win over official background
+CSS. User override CSS wins over installed theme CSS.
 
 ## App-wide Wallpaper
 
